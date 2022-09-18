@@ -65,8 +65,12 @@ def send_phone_page():
     st.text('Add contact (Comming soon)')
     
     st.markdown('# People near you:')
-    with st.expander('Groceries for all - Dar', False):
-        send_form('Groceries for all')
+    with st.expander('Swahib Bodaboda', False):
+        send_form('Swahib Bodaboda')
+    with st.expander('John Bajaji', False):
+        send_form('John Bajaji')
+
+
 
 def receive_qr_page():
     st.markdown('# Bogdan is sending you 500 Shillings. Confirm?')
@@ -97,9 +101,14 @@ def receive_phone_page():
     with st.expander('Mwombeki - 0712345678', False):
         receive_form('Mwombeki')
     st.text('Add contact (Comming soon)')
-    st.markdown('# People near you:')
-    with st.expander('Groceries for all - Dar', False):
-        receive_form('Groceries for all')
+    st.markdown('# Shops near you:')
+    with st.expander('Kawe Pharmacy', False):
+        receive_form('Kawe Pharmacy')
+    with st.expander('Mangi Shop', False):
+        receive_form('Mangi Shop')            
+    with st.expander('Kahawa Cafe', False):
+        receive_form('Kahawa Cafe')
+
 
 def main_page():
     st.markdown(f"""# Balance: {st.session_state.balance}""")
