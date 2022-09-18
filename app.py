@@ -27,14 +27,14 @@ def send_change():
 def receive_change():
     upd('page', 'receive')
 
-def send_change_complete(to_send, name = 'Bogdan'):
+def send_change_complete(to_send, name = 'Anna John'):
     init('history', [])
     upd('history', [f"You've sent {name} {to_send} Shillings"] + get('history'))
     upd('balance', get('balance')-to_send)
     upd('page', 'main')
     st.experimental_rerun()
 
-def receive_change_complete(to_send, name = 'Bogdan'):
+def receive_change_complete(to_send, name = 'Anna John'):
     init('history', [])
     upd('history', [f"{name} sent you {to_send} Shillings"] + get('history'))
     upd('balance', get('balance') + to_send)
@@ -49,8 +49,8 @@ def send_form(name):
             send_change_complete(to_send=to_send, name=name)
 def send_qr_page():
     st.markdown(f"""# Balance: {st.session_state.balance}""")
-    st.markdown(f"""### You scanned Bogdan's QR code""")
-    st.markdown(f'## Confirm sending Bogdan 200 Shillings?')
+    st.markdown(f"""### You scanned Anna John's QR code""")
+    st.markdown(f'## Confirm sending Anna John 200 Shillings?')
     if st.button('Send'):
         send_change_complete(to_send=200)
 
@@ -58,10 +58,10 @@ def send_qr_page():
 def send_phone_page():
     st.markdown(f"""# Balance: {st.session_state.balance}""")
     st.markdown('# Contacts:')
-    with st.expander('Bogdan - 0744444444', False):
-        send_form('Bogdan')
-    with st.expander('Mwombeki - 0712345678', False):
-        send_form('Mwombeki')
+    with st.expander('Anna John - 0744444444', False):
+        send_form('Anna John')
+    with st.expander('Mohamed Bakari - 0712345678', False):
+        send_form('Mohamed Bakari')
     st.text('Add contact (Comming soon)')
     
     st.markdown('# People near you:')
@@ -73,7 +73,7 @@ def send_phone_page():
 
 
 def receive_qr_page():
-    st.markdown('# Bogdan is sending you 500 Shillings. Confirm?')
+    st.markdown('# Anna John is sending you 500 Shillings. Confirm?')
     if st.button('Confirm'):
         receive_change_complete(500)
     # add_bg_from_local('qr.png') 
@@ -96,10 +96,10 @@ def receive_change_wait_page():
 def receive_phone_page():
     st.markdown(f"""# Balance: {st.session_state.balance}""")
     st.markdown('# Contacts:')
-    with st.expander('Bogdan - 0744444444', False):
-        receive_form('Bogdan')
-    with st.expander('Mwombeki - 0712345678', False):
-        receive_form('Mwombeki')
+    with st.expander('Anna John - 0744444444', False):
+        receive_form('Anna John')
+    with st.expander('Mohamed Bakari - 0712345678', False):
+        receive_form('Mohamed Bakari')
     st.text('Add contact (Comming soon)')
     st.markdown('# Shops near you:')
     with st.expander('Kawe Pharmacy', False):
