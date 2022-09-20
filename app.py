@@ -16,9 +16,9 @@ def get(key):
     return st.session_state[key]
     
 
-if not get('uuu'):
-    upd('uuu', True)
-    upd('balance', 0)
+# if not get('uuu'):
+#     upd('uuu', True)
+#     upd('balance', 0)
 
 init('balance', 10000)
 init('page', 'main')
@@ -85,7 +85,7 @@ def receive_qr_page():
 def receive_form(name):
     st.warning(f'Request change from {name}')
     with st.form(f'Receiveing change from {name}'):
-        to_receive = st.number_input("Shillings to receive", min_value=0, max_value=get('balance'))
+        to_receive = st.number_input("Shillings to receive", min_value=0)
         if st.form_submit_button('Receive'):
             receive_change_wait(name, to_receive)
 
