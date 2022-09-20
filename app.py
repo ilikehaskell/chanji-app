@@ -192,12 +192,12 @@ for page in ['main',
 
 
 
-
-if st.button('Return Home'):
-        
-    if get('page') == 'receive_change_wait':
-        name = get('receive_name')
-        to_receive = get('receive_change')
-        receive_change_complete(to_receive, name)
-    upd('page', 'main')
-    st.experimental_rerun()
+if get('page') != 'main':
+    if st.button('Return Home'):
+            
+        if get('page') == 'receive_change_wait':
+            name = get('receive_name')
+            to_receive = get('receive_change')
+            receive_change_complete(to_receive, name)
+        upd('page', 'main')
+        st.experimental_rerun()
