@@ -16,9 +16,9 @@ def get(key):
     return st.session_state[key]
     
 
-# if not get('uuu'):
-#     upd('uuu', True)
-#     upd('balance', 0)
+if not get('uuu'):
+    upd('uuu', True)
+    upd('balance', 0)
 
 init('balance', 10000)
 init('page', 'main')
