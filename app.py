@@ -62,7 +62,7 @@ def send_phone_page():
         send_form('Anna John')
     with st.expander('Mohamed Bakari - 0712345678', False):
         send_form('Mohamed Bakari')
-    st.text('Add contact (Comming soon)')
+    st.text('Add contact (Coming soon)')
     
     st.markdown('# People near you:')
     with st.expander('Swahib Bodaboda', False):
@@ -100,7 +100,7 @@ def receive_phone_page():
         receive_form('Anna John')
     with st.expander('Mohamed Bakari - 0712345678', False):
         receive_form('Mohamed Bakari')
-    st.text('Add contact (Comming soon)')
+    st.text('Add contact (Coming soon)')
     st.markdown('# Shops near you:')
     with st.expander('Kawe Pharmacy', False):
         receive_form('Kawe Pharmacy')
@@ -132,10 +132,10 @@ def send_page():
         st.button('Send to Phone Number', on_click=send_phone)
         
     with col2:
-        st.button('Scan QR Code (Comming Soon)')#', on_click=send_qr)
+        st.button('Scan QR Code (Coming Soon)')#', on_click=send_qr)
 
     with col3:
-        st.button('Touch Phones (Comming Soon)')#, on_click=send_touch)
+        st.button('Touch Phones (Coming Soon)')#, on_click=send_touch)
 
 def receive_page():
     st.markdown(f"""# Balance: {st.session_state.balance}""")
@@ -146,10 +146,10 @@ def receive_page():
         st.button('Request from Phone Number', on_click=receive_phone)
 
     with col2:
-        st.button('Show QR Code (Comming Soon)')#', on_click=receive_qr)
+        st.button('Show QR Code (Coming Soon)')#', on_click=receive_qr)
     
     with col3:
-        st.button('Touch Phones (Comming Soon)')#, on_click=receive_touch)
+        st.button('Touch Phones (Coming Soon)')#, on_click=receive_touch)
 
 
 
